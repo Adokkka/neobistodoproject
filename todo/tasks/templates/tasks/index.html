@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<h1>Neobis ToDo</h1>
+<form method="POST" action="/">
+    {% csrf_token %}
+    {{form.title}}
+    <input type="submit" name="Create Task">
+</form>
+
+{% for task in tasks %}
+<div>
+    <a href="{% url 'update_index' task.id %}">Update</a>
+    <a href="{% url 'delete' task.id %}">Delete</a>
+
+    {% if task.complate == True %}
+        <strike> {{task}}</strike>
+    {% else %}
+        <span>{{task}}</span>
+    {% endif %}
+</div>
+{% endfor %}
+
+</body>
+</html>

@@ -2,6 +2,7 @@
 Installation
 Clone the repository to your local machine:
 
+https://github.com/Adokkka/neobistodoproject.git
 
 Steps and commands for Linux machine are the same but use python3 instead of python.
 
